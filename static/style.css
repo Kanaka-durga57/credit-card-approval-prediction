@@ -1,0 +1,626 @@
+/* ==========================================
+   Credit Card Approval Prediction
+   Main Styles
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef4ff, #f8fbff);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   Main Container
+   ========================================== */
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* ==========================================
+   Result Card
+   ========================================== */
+
+.result-card {
+    max-width: 700px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 24px;
+    padding: 45px 50px;
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.10);
+
+    border: 1px solid #e5e7eb;
+}
+
+
+/* ==========================================
+   Result Icons
+   ========================================== */
+
+.result-safe,
+.result-danger {
+    width: 85px;
+    height: 85px;
+
+    margin: 0 auto 25px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 42px;
+    font-weight: bold;
+}
+
+
+/* Approved */
+
+.result-safe {
+    background: #dcfce7;
+    color: #15803d;
+
+    border: 6px solid #bbf7d0;
+}
+
+
+/* Rejected */
+
+.result-danger {
+    background: #fee2e2;
+    color: #dc2626;
+
+    border: 6px solid #fecaca;
+}
+
+
+/* ==========================================
+   Result Heading
+   ========================================== */
+
+.result-card h1 {
+    font-size: 34px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+
+/* Approved heading */
+
+.result-card:has(.result-safe) h1 {
+    color: #15803d;
+}
+
+
+/* Rejected heading */
+
+.result-card:has(.result-danger) h1 {
+    color: #dc2626;
+}
+
+
+/* ==========================================
+   Result Message
+   ========================================== */
+
+.result-message {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   Risk Status
+   ========================================== */
+
+.risk-status {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin: 20px 0;
+}
+
+.risk-status h3 {
+    font-size: 15px;
+    color: #64748b;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.risk-status p {
+    font-size: 20px;
+    color: #334155;
+}
+
+
+/* ==========================================
+   Probability Box
+   ========================================== */
+
+.probability-box {
+    margin: 25px 0;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #dbeafe
+    );
+
+    border: 1px solid #bfdbfe;
+}
+
+.probability-box h3 {
+    color: #475569;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.probability-box strong {
+    display: block;
+
+    font-size: 42px;
+
+    color: #2563eb;
+
+    font-weight: 700;
+}
+
+
+/* ==========================================
+   Information / Disclaimer
+   ========================================== */
+
+.result-note {
+    background: #fff7ed;
+
+    border-left: 4px solid #f97316;
+
+    padding: 18px 20px;
+
+    margin: 25px 0;
+
+    text-align: left;
+
+    border-radius: 8px;
+}
+
+.result-note p {
+    color: #7c2d12;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 8px;
+}
+
+.result-note p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   Buttons
+   ========================================== */
+
+.result-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+.predict-button,
+.home-button {
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+
+/* Primary Button */
+
+.predict-button {
+    background: #2563eb;
+
+    color: white;
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.25);
+}
+
+.predict-button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 20px rgba(37, 99, 235, 0.30);
+}
+
+
+/* Home Button */
+
+.home-button {
+    background: #f1f5f9;
+
+    color: #334155;
+
+    border: 1px solid #cbd5e1;
+}
+
+.home-button:hover {
+    background: #e2e8f0;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   Home Page
+   ========================================== */
+
+.home-card {
+    max-width: 1000px;
+    margin: 30px auto;
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 45px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.home-content {
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 40px;
+    color: #1e3a8a;
+    margin-bottom: 12px;
+}
+
+.home-content p {
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   Home Sections
+   ========================================== */
+
+.home-section {
+    margin-top: 40px;
+}
+
+.home-section h2 {
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+
+/* ==========================================
+   Steps
+   ========================================== */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 25px;
+}
+
+.step {
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    padding: 25px;
+
+    border-radius: 16px;
+}
+
+.step h3 {
+    color: #2563eb;
+
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   Technology Tags
+   ========================================== */
+
+.technology-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.technology-list span {
+    background: #eff6ff;
+
+    color: #1d4ed8;
+
+    border: 1px solid #bfdbfe;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   Home Action
+   ========================================== */
+
+.home-action {
+    text-align: center;
+
+    margin-top: 40px;
+}
+
+.home-action .predict-button {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    font-size: 17px;
+}
+
+
+/* ==========================================
+   Home Note
+   ========================================== */
+
+.home-note {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+/* ==========================================
+   Form Card
+   ========================================== */
+
+.form-card {
+    max-width: 850px;
+
+    margin: 30px auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.form-card h1 {
+    text-align: center;
+
+    color: #1e3a8a;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   Form Grid
+   ========================================== */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+
+    font-weight: 600;
+
+    color: #334155;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    outline: none;
+
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* ==========================================
+   Form Submit
+   ========================================== */
+
+.form-submit {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.form-submit button {
+    background: #2563eb;
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 35px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.form-submit button:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: 95%;
+
+        padding: 20px 10px;
+    }
+
+    .result-card {
+        padding: 30px 20px;
+
+        margin: 15px auto;
+    }
+
+    .result-card h1 {
+        font-size: 27px;
+    }
+
+    .probability-box strong {
+        font-size: 34px;
+    }
+
+    .form-card {
+        padding: 25px 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .home-card {
+        padding: 30px 20px;
+    }
+
+    .home-content h1 {
+        font-size: 30px;
+    }
+
+    .result-buttons {
+        flex-direction: column;
+    }
+
+    .predict-button,
+    .home-button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Credit Card Approval Prediction</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+```
+
+</head>
+
+<body>
+
+```
+<div class="container">
+
+    <div class="result-card">
+
+
+        {% if result == "APPROVED" %}
+
+            <!-- APPROVED -->
+
+            <div class="result-safe">
+                ✓
+            </div>
+
+            <h1>
+                Predicted: APPROVED
+            </h1>
+
+            <p class="result-message">
+
+                The machine-learning model identified
+                a <strong>lower credit-risk pattern</strong>
+                based on the information provided.
+
+            </p>
+
+
+        {% else %}
+
+            <!-- REJECTED -->
+
+            <div class="result-danger">
+                !
+            </div>
+
+            <h1>
+                Predicted: REJECTED
+            </h1>
+
+            <p class="result-message">
+
+                The machine-learning model identified
+                a <strong>higher credit-risk pattern</strong>
+                based on the information provided.
+
+            </p>
+
+
+        {% endif %}
+
+
+        <!-- Project Title -->
+
+        <div class="risk-status">
+
+            <h3>
+                Credit Card Approval Prediction
+            </h3>
+
+            <p>
+                <strong>{{ risk_status }}</strong>
+            </p>
+
+        </div>
+
+
+        <!-- Probability -->
+
+        <div class="probability-box">
+
+            <h3>
+                Risk Probability
+            </h3>
+
+            <strong>
+                {{ probability }}%
+            </strong>
+
+        </div>
+
+
+        <!-- Explanation -->
+
+        <div class="result-note">
+
+            <p>
+                This prediction is generated using
+                machine-learning techniques and historical
+                credit data.
+            </p>
+
+            <p>
+                A lower-risk prediction is displayed as
+                <strong>APPROVED</strong>, while a higher-risk
+                prediction is displayed as
+                <strong>REJECTED</strong>.
+            </p>
+
+            <p>
+                This is a project prediction and should not
+                be treated as an actual bank approval or
+                rejection decision.
+            </p>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="result-buttons">
+
+            <a href="/predict"
+               class="predict-button">
+
+                Make Another Prediction
+
+            </a>
+
+
+            <a href="/"
+               class="home-button">
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+```
+
+</body>
+
+</html>

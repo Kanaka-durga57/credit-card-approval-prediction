@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Credit Card Risk Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-card home-card">
+
+            <h1>Credit Card Risk Prediction</h1>
+
+            <p class="subtitle">
+                AI-powered credit risk assessment using Machine Learning
+            </p>
+
+
+            <div class="home-content">
+
+                <div class="home-section">
+
+                    <h2>About the Project</h2>
+
+                    <p>
+                        This application uses machine learning to analyze
+                        applicant information and estimate their credit
+                        risk based on historical credit data.
+                    </p>
+
+                </div>
+
+
+                <div class="home-section">
+
+                    <h2>How It Works</h2>
+
+                    <div class="steps">
+
+                        <div class="step">
+                            <strong>1</strong>
+                            <span>Enter applicant details</span>
+                        </div>
+
+                        <div class="step">
+                            <strong>2</strong>
+                            <span>Machine learning analyzes the data</span>
+                        </div>
+
+                        <div class="step">
+                            <strong>3</strong>
+                            <span>View the predicted credit risk</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="home-section">
+
+                    <h2>Technology Used</h2>
+
+                    <div class="technology-list">
+
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Scikit-learn</span>
+                        <span>Random Forest</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="home-action">
+
+                    <a href="/predict"
+                       class="predict-button">
+                        Start Prediction
+                    </a>
+
+                </div>
+
+
+                <p class="home-note">
+
+                    Note: This is a machine-learning prediction
+                    prototype and does not represent an actual
+                    bank approval or rejection decision.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
